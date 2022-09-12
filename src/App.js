@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from "react"
+import Home from './Home'
+import Quiz from './Quiz'
+import { nanoid } from "nanoid"
+export default function App(){
+  const [page , setPage ] = React.useState(true)
+  const [quiz , setQuiz] = React.useState([])
+  function change(){
+    setPage(prev => !prev)
+    
+  }   
+  React.useEffect(() => {
+    async function Question(){ 
+    const response = await fetch('https://opentdb.com/api.php?amount=5&category=27&difficulty=easy&type=multiple')
+    const data = await response.json()
+    setQuiz(data.results)}
+      Question()
+  }, [])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="quiz">
+      
+     {page ? <Home 
+        change= {() => change()}
+      />:<Quiz quiz = {quiz} key={nanoid()}/>}  
     </div>
-  );
+  )
 }
-
-export default App;

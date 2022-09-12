@@ -1,13 +1,78 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  margin: 0;
+  padding: 0;
+  background: white;
+  font-family: karla;
+}
+.quiz{
+  margin: auto;
+  width: 600px;
+  height: 640px;
+  background: #F5F7FB;
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+/* .contain{
+  
+} */
+.centre{
+  height: 40%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+
+}
+.quiz-box{
+  display: block;
+}
+.centre h2{
+  width: 40%;
+  margin: auto;
+}
+.centre button{
+  margin: auto;
+  border: none;
+  height: 50px;
+  width: 120px;
+  background: #4D5B9E;
+  font-family: inter;
+  font-weight: 600;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.question-box{
+  padding: 10px;
+  font-weight: normal;
+  
+}
+.option-box{
+  min-width: 15%;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid#4D5B9E;
+  cursor: pointer;
+  font-family: inter;
+  font-weight: 500;
+}
+.options{
+  display: flex;
+  justify-content: space-between;
+}
+.submit{
+  margin: auto;
+  height: 50px;
+  width: 120px;
+  background: #4D5B9E;
+  font-family: inter;
+  font-weight: 500;
+  border: none;
+  color: white;
+  border-radius: 10px;
 }
