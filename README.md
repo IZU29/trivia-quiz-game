@@ -1,1 +1,1 @@
-# trivia-quiz-game
+# trivia-quiz
